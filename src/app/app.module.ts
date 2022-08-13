@@ -13,6 +13,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { OrdersModule } from './components/orders/orders.module';
 import { UsersModule } from './components/users/users.module';
 import { ProductsModule } from './components/products/products.module';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { ContactusComponent } from './components/contactus/contactus.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,10 +26,10 @@ import { ProductsModule } from './components/products/products.module';
     FooterComponent,
     NavbarComponent,
     SideNavbarComponent,  
-    NotFoundComponent
+    NotFoundComponent, AboutusComponent, ContactusComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,HttpClientModule,
     AppRoutingModule,
     OrdersModule, UsersModule, ProductsModule
   ],
