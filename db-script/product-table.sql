@@ -1,4 +1,5 @@
-CREATE TABLE PRODUCTS(
+-- create table: products
+CREATE TABLE products(
   productId             INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
   productTitle          VARCHAR(500) NOT NULL,
   productDescription    VARCHAR(500) NOT NULL,
@@ -11,3 +12,6 @@ CREATE TABLE PRODUCTS(
   rating                INTEGER NOT NULL,
   FOREIGN KEY (categoryId) REFERENCES CATEGORIES(categoryId)
 );
+
+SHOW TABLES;
+DESC products;

@@ -1,4 +1,5 @@
-CREATE TABLE ORDERITEMS(
+-- create table: order-items
+CREATE TABLE orderitems(
   orderItemId          INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
   orderId              INTEGER,
   productId            INTEGER,
@@ -16,4 +17,4 @@ CREATE TABLE ORDERITEMS(
 
 mysql> SHOW TABLES;
 
-mysql> DESC ORDERITEMS;
+mysql> DESC orderitems;

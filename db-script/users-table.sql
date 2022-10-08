@@ -1,4 +1,5 @@
-mysql> CREATE TABLE USERS(
+-- create table: users
+mysql> CREATE TABLE users(
   userId               INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
   email                VARCHAR(50) NOT NULL,
   password             VARCHAR(50) NOT NULL,
@@ -10,4 +11,8 @@ mysql> CREATE TABLE USERS(
   pincode              INTEGER,
   image                VARCHAR(1000),
   contact              BIGINT,
-  addedOn              DATETIME DEFAULT CURRENT_TIMESTAMP);
+  addedOn              DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+SHOW TABLES;
+DESC users;

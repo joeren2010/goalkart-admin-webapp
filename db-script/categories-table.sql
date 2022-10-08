@@ -1,4 +1,5 @@
-CREATE TABLE CATEGORIES (
+-- create table: categories
+CREATE TABLE categories(
   categoryId            INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
   categoryName          VARCHAR(255) NOT NULL,
   categoryDescription   VARCHAR(255),
@@ -9,4 +10,4 @@ CREATE TABLE CATEGORIES (
 
 mysql> SHOW TABLES;
 
-mysql> DESC CATEGORIES;
+mysql> DESC categories;

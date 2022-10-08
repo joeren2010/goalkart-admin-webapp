@@ -1,4 +1,5 @@
-CREATE TABLE SHIPMENTS(
+-- create table: shipments
+CREATE TABLE shipments(
   shipmentId           INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
   orderId              INTEGER,
   shipmentStatus       INTEGER,
@@ -7,9 +8,9 @@ CREATE TABLE SHIPMENTS(
   expectedDeliveryDate DATETIME,
   shipmentMethod       VARCHAR(255),
   shipmentCompany      VARCHAR(255),
-  FOREIGN KEY (orderId) REFERENCES ORDERS(orderId)
+  FOREIGN KEY (orderId) REFERENCES orders(orderId)
 );
 
 mysql> SHOW TABLES;
 
-mysql> DESC SHIPMENTS;
+mysql> DESC shipments;

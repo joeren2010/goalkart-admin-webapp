@@ -1,4 +1,5 @@
-CREATE TABLE ORDERS(
+-- create table: orders
+CREATE TABLE orders(
   orderId              INTEGER NOT NULL PRIMARY KEY,
   orderDate            DATETIME DEFAULT CURRENT_TIMESTAMP,
   orderStatus          VARCHAR(50) NOT NULL,
@@ -21,4 +22,4 @@ CREATE TABLE ORDERS(
 
 mysql> SHOW TABLES;
 
-mysql> DESC ORDERS;
+mysql> DESC orders;
