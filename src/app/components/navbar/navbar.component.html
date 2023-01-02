@@ -6,62 +6,108 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/aboutus">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/contactus">Contact us</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Users
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" routerLink="/users">Users list</a></li>
-                        <li><a class="dropdown-item" routerLink="/users/create">Users create</a></li>
-                        <li><a class="dropdown-item" routerLink="/users/view">Users details</a></li>
-                    </ul>
-                </li>
+            <div *ngIf="loggedIn">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" routerLink="/home"
+                            [skipLocationChange]="true">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/aboutus" [skipLocationChange]="true">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/contactus" [skipLocationChange]="true">CONTACTS</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            USERS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" routerLink="/users" [skipLocationChange]="true">Users list</a>
+                            </li>
+                            <li><a class="dropdown-item" routerLink="/users/create" [skipLocationChange]="true">Users
+                                    create</a></li>
+                            <li><a class="dropdown-item" routerLink="/users/view" [skipLocationChange]="true">Users
+                                    details</a></li>
+                        </ul>
+                    </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Products
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" routerLink="/products">Porudct list</a></li>
-                        <li><a class="dropdown-item" routerLink="/products/create">Product create</a></li>
-                        <li><a class="dropdown-item" routerLink="/products/view">Product details</a></li>
-                        <li><a class="dropdown-item" routerLink="/products/categories">Product categories</a></li>
-                    </ul>
-                </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            PRODUCTS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" routerLink="/products" [skipLocationChange]="true">Porudct
+                                    list</a></li>
+                            <li><a class="dropdown-item" routerLink="/products/create"
+                                    [skipLocationChange]="true">Product create</a></li>
+                            <li><a class="dropdown-item" routerLink="/products/view" [skipLocationChange]="true">Product
+                                    details</a></li>
+                            <li><a class="dropdown-item" routerLink="/products/categories"
+                                    [skipLocationChange]="true">Product categories</a></li>
+                        </ul>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/orders">Orders</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/orders" [skipLocationChange]="true">ORDERS</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="#">Shipments</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="#" [skipLocationChange]="true">SHIPMENTS</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="#">Payments</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav  mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/auth">Sign In</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="#">Logout</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="#" [skipLocationChange]="true">PAYMENTS</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="navbar-nav ml-auto mr-20">
+                <div *ngIf="!loggedIn">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/auth" [skipLocationChange]="true"><strong>SIGN IN</strong></a>
+                    </li>
+                </div>
+                <div *ngIf="loggedIn">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">SEARCH</button>
+                    </form>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <strong>ADMIN ACCT</strong>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" routerLink="/auth/register" [skipLocationChange]="true">
+                                Create Admins
+                            </a>
+                            <a class="dropdown-item" routerLink="/auth/change-password" [skipLocationChange]="true">
+                                New Password
+                            </a>
+                            <a class="dropdown-item" routerLink="#" (click)="logout()" [skipLocationChange]="true">
+                                Admin Signout
+                            </a>
+                        </div>
+                    </li>
+                </div>
             </ul>
         </div>
     </div>
 </nav>
+
+
+
+
+<!--
+<ul class="navbar-nav  mb-2 mb-lg-0">
+    <li class="nav-item">
+        <a class="nav-link" routerLink="/auth"><strong>SIGN IN</strong></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" routerLink="#"><strong>ACCOUNT</strong></a>
+    </li>
+</ul>
+-->

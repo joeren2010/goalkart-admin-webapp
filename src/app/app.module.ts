@@ -16,6 +16,7 @@ import { ProductsModule } from './components/products/products.module';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,12 +27,18 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     NavbarComponent,
     SideNavbarComponent,  
-    NotFoundComponent, AboutusComponent, ContactusComponent
+    NotFoundComponent, 
+    AboutusComponent, 
+    ContactusComponent
   ],
   imports: [
-    BrowserModule,HttpClientModule,
+    BrowserModule, 
+    HttpClientModule,
     AppRoutingModule,
-    OrdersModule, UsersModule, ProductsModule
+    ReactiveFormsModule,
+    OrdersModule, 
+    UsersModule, 
+    ProductsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
