@@ -37,11 +37,10 @@ export class AdminsService {
     return this.loggedIn;       //default value set to false (see behavior-subject line)
   }
 
-  //if this function is called from any component, the value is true
   logIn(){
-    this.obj.next(true);
+    this.obj.next(true);         //when called... returns "true"    
   }
   logOut(){
-    this.obj.next(false);
+    this.obj.next(false);        //when called... returns "false" 
   }
 }
